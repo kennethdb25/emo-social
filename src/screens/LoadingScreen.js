@@ -1,12 +1,12 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 
 export default function LoadingScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
       <View style={styles.contentContainer}>
-        <Text>LoadingScreen</Text>
+        <Image source={require("../../assets/loadingImage.png")} style={styles.image} />
       </View>
     </View>
   );
@@ -15,13 +15,17 @@ export default function LoadingScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#004FBF",
     marginTop: 20,
   },
   contentContainer: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    paddingHorizontal: 20,
   },
+  image: {
+    flex: 1,
+    width: '100%',
+    alignItems: "center",
+    justifyContent: "center",
+  }
 })
