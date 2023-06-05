@@ -17,7 +17,7 @@ export default function DashboardScreen({ navigation }) {
              
           </TouchableOpacity>
           <Text style={styles.text}>My Trophies</Text> 
-          <Text>  asd  </Text>
+ 
          
           <TouchableOpacity>
             <Image
@@ -27,10 +27,38 @@ export default function DashboardScreen({ navigation }) {
           </TouchableOpacity>
          
           <Text style={styles.text1}>Achievements</Text>
-  a
+
+          <TouchableOpacity>
+            <Image
+              source={require("../../assets/setting.png")}
+              style={styles.image1}
+            />
+          </TouchableOpacity>
+  
+  
+          <TouchableOpacity>
+            <Image
+              source={require("../../assets/user.png")}
+              style={styles.image4}
+            />
+            
+           
+          </TouchableOpacity>
+          <Text style={styles.tes}>Story</Text>
+        
+          <Text style={styles.tes1}>Explore Games</Text>
+          <Text style={styles.tes2}>Daily Activity</Text>
+      <View style={styles.contentContainer}>
+
+  
+      
+        </View>
+         
+    
+    </View>
            </View>
     </View>
-      </View>
+
   
    
   );
@@ -45,31 +73,65 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     width: "90%",
-  
-    padding: 20,
-    marginTop: 50,
+    
+    justifyContent: "center",
+    padding: 10,
+    marginTop: 200,
     fontSize: 200,
     fontWeight: "bold",
- 
- box:{
-  width: 70,
-    height: 70,
-  backgroundColor: "#E7BD6D",
- }
-
-  
   },
+ 
+ tes:{
+     fontSize: 20,
+    fontWeight: "bold",
+    marginLeft: 10,
+    marginTop: 100,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#6d97e7",
+    width: 150,
+    flexDirection: "row",
+    height: 150,
+
+  },
+   
+ tes1:{
+  fontSize: 20,
+ fontWeight: "bold",
+ marginLeft: 200,
+ marginTop: -150,
+ alignItems: "center",
+ justifyContent: "center",
+ width: 150,
+ flexDirection: "row",
+ height: 150,
+ backgroundColor: "#999999",
+
+},
+tes2:{
+  fontSize: 20,
+ fontWeight: "bold",
+ marginLeft: 400,
+ marginTop: -150,
+ alignItems: "center",
+ justifyContent: "center",
+ width: 150,
+ flexDirection: "row",
+ height: 150,
+ backgroundColor: "#bd6de7",
+
+},
   text:{
     fontSize: 20,
     fontWeight: "bold",
-    marginLeft: 30,
-    marginTop: -150,
+    marginLeft: 220,
+    marginTop: -20,
 
   },
   text1:{
     fontSize: 20,
     fontWeight: "bold",
-    marginLeft: 200,
+    marginLeft: 370,
     marginTop: -30,
   },
   
@@ -122,9 +184,9 @@ const styles = StyleSheet.create({
   image: {
     position: 'absolute',
     flex: 1,
-    width: 50,
-    height: 76,
-    marginLeft: 150,
+    width: 30,
+    height: 46,
+    marginLeft: 340,
     marginTop: -40,
     alignItems: "center",
     justifyContent: "center",
@@ -132,10 +194,30 @@ const styles = StyleSheet.create({
   image2: {
     position: 'absolute',
     flex: 1,
-    width:77,
-    height: 76,
-    marginLeft: -70,
-    marginTop: -170,
+    width:37,
+    height: 36,
+    marginLeft: 180,
+    marginTop: -30,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  image1: {
+    position: 'absolute',
+    flex: 1,
+    width: 50,
+    height: 50,
+    marginLeft: 570,
+    marginTop: -40,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  image4: {
+    position: 'absolute',
+    flex: 1,
+    width: 50,
+    height: 50,
+    marginLeft: 500,
+    marginTop: -40,
     alignItems: "center",
     justifyContent: "center",
   },
