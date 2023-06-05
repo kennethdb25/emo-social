@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { View, Text, StyleSheet, Image, Button, TouchableOpacity, Pressable, ImageBackground } from "react-native";
-
+import React from "react";
+import {
+  View,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  ImageBackground,
+} from "react-native";
 
 export default function LoadingScreen({ navigation }) {
-
   const handlePress = () => {
-    navigation.navigate('Landing');
+    navigation.navigate("Landing");
   };
   return (
     <View style={styles.container}>
@@ -26,7 +30,6 @@ export default function LoadingScreen({ navigation }) {
   );
 }
 
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -38,7 +41,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   image: {
-    position: 'absolute',
+    position: "absolute",
     flex: 1,
     width: "100%",
     height: "100%",
@@ -46,7 +49,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   image2: {
-    position: 'absolute',
+    position: "absolute",
     flex: 1,
     width: 150,
     height: 90,

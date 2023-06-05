@@ -7,18 +7,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-export default function DashboardScreen({ navigation }) {
-  const handlePressStory = () => {
-    navigation.navigate("Story")
-  }
-
-  const handlePressExploreGames = () => {
-    navigation.navigate("ExploreGames")
-  }
-
-  const handlePressDailyActivity = () => {
-    navigation.navigate("DailyActivity")
-  }
+export default function StoryScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.contentContainer}>
@@ -48,20 +37,22 @@ export default function DashboardScreen({ navigation }) {
             style={styles.image4}
           />
         </TouchableOpacity>
-        <TouchableOpacity onPress={handlePressStory}>
-          <Text style={styles.text3}>Story</Text>
+        <TouchableOpacity >
+          <Text style={styles.text3}>Story 1</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={handlePressExploreGames}>
-          <Text style={styles.text4}>Explore Games</Text>
+        <TouchableOpacity >
+          <Text style={styles.text4}>Story 2</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={handlePressDailyActivity}>
-          <Text style={styles.text5}>Daily Activity</Text>
+        <TouchableOpacity >
+          <Text style={styles.text5}>Story 3</Text>
         </TouchableOpacity>
         <View style={styles.contentContainer}></View>
       </View>
     </View>
   );
 }
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

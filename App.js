@@ -7,6 +7,9 @@ import LoadingScreen from './src/screens/LoadingScreen';
 import UserDetailsScreen from './src/screens/UserDetailsScreen';
 import DashboardScreen from './src/screens/DashboardScreen';
 import { useEffect } from 'react';
+import StoryScreen from './src/screens/StoryScreen';
+import ExploreGamesScreen from './src/screens/ExploreGamesScreen';
+import DailyActivityScreen from './src/screens/DailyActivityScreen';
 
 const Stack = createStackNavigator();
 
@@ -42,6 +45,9 @@ const AppRoutes = () => {
         <Stack.Screen name='Loading' component={LoadingScreen} />
         <Stack.Screen name='Landing' component={UserDetailsScreen} />
         <Stack.Screen name='Dashboard' component={DashboardScreen} />
+        <Stack.Screen name='Story' component={StoryScreen} />
+        <Stack.Screen name='ExploreGames' component={ExploreGamesScreen} />
+        <Stack.Screen name='DailyActivity' component={DailyActivityScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
