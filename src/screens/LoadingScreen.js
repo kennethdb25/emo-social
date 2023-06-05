@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, Image, Button, TouchableOpacity, Pressable, ImageBackground } from "react-native";
 
+
 export default function LoadingScreen({ navigation }) {
+
   const handlePress = () => {
     navigation.navigate('Landing');
   };
