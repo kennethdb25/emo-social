@@ -1,7 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 
 const UserContext = React.createContext({
-  userId: ""
+  userId: {},
+  setUser: () => { },
+  loading: false
 });
 
 export function UserId() {
@@ -23,11 +25,9 @@ export function AuthProvider({ children }) {
 
     const getUser = async () => {
       const user = await AsyncStorage.getItem("user");
-
       if (user !== null) {
         setCurrentUser(JSON.parse(user));
       }
-
       setLoading(false);
     };
 
