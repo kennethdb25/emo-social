@@ -5,9 +5,17 @@ import {
   StyleSheet,
   Image,
   TouchableOpacity,
+  VideoBackground,
 } from "react-native";
+import { Video, ResizeMode } from 'expo-av'
+
+
+
 
 export default function DashboardScreen({ navigation }) {
+  const video = React.useRef(null);
+  const [status, setStatus] = React.useState({})
+
   const handlePressStory = () => {
     navigation.navigate("Story")
   }
@@ -19,7 +27,19 @@ export default function DashboardScreen({ navigation }) {
   const handlePressDailyActivity = () => {
     navigation.navigate("DailyActivity")
   }
+  
   return (
+    <Video
+      ref={video}
+      // style={styles.video}
+      source={{
+        localUri: require('../../assets/dashboardBg.mp4')
+      }}
+      useNativeControls
+      resizeMode={ResizeMode.CONTAIN}
+      isLooping
+      onPlaybackStatusUpdate={status => setStatus(() => status)}
+    >
     <View style={styles.container}>
       <View style={styles.contentContainer}>
         <TouchableOpacity>
@@ -60,7 +80,9 @@ export default function DashboardScreen({ navigation }) {
         <View style={styles.contentContainer}></View>
       </View>
     </View>
+    </Video>
   );
+ 
 }
 const styles = StyleSheet.create({
   container: {
