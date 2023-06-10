@@ -1,22 +1,35 @@
 import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { useRoute } from '@react-navigation/native'
 
 export default function ExploreGamesScreen({ navigation }) {
+  const route = useRoute();
+  const { myPropFunction } = route.params;
+
+  const handlePress1stGame = async () => {
+    myPropFunction();
+  }
+
+  const handlePress2ndGame = async () => {
+    myPropFunction();
+  }
+
+  const handlePress3rdGame = async () => {
+    myPropFunction();
+  }
+
+  const handlePress4thGame = async () => {
+    myPropFunction();
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.contentContainer}>
-      <TouchableOpacity>
+        <TouchableOpacity>
           <Image
             source={require("../../assets/home.png")}
             style={styles.image5}
           />
-          
         </TouchableOpacity>
         <TouchableOpacity>
           <Image
@@ -43,35 +56,37 @@ export default function ExploreGamesScreen({ navigation }) {
             source={require("../../assets/user.png")}
             style={styles.image4}
           />
-             <TouchableOpacity >
-          <Text style={styles.button}> Explore Games</Text>
         </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={styles.button}> Explorer Games</Text>
         </TouchableOpacity>
-        <TouchableOpacity >
-          <Text style={styles.text3}><Image
-            source={require("../../assets/bike.png")}
-            style={styles.images}
-          /></Text>
-       
+        <TouchableOpacity onPress={handlePress1stGame}>
+          <Text style={styles.text3}>
+            <Image
+              source={require("../../assets/bike.png")}
+              style={styles.images}
+            />
+          </Text>
         </TouchableOpacity>
-   
-        <TouchableOpacity >
-          <Text style={styles.text4}><Image
-            source={require("../../assets/while.png")}
-            style={styles.images1}
-          />   </Text>
-           
+        <TouchableOpacity onPress={handlePress2ndGame}>
+          <Text style={styles.text4}>
+            <Image
+              source={require("../../assets/while.png")}
+              style={styles.images1}
+            />{" "}
+          </Text>
         </TouchableOpacity>
-       
-        <TouchableOpacity >
-          <Text style={styles.text5}><Image
-            source={require("../../assets/talking.png")}
-            style={styles.images2}
-          /></Text>
-           {/* <Text style={styles.textnames1}>Talking With</Text> */}
-           {/* <Text style={styles.textnames1}>   Friends</Text> */}
+        <TouchableOpacity onPress={handlePress3rdGame}>
+          <Text style={styles.text5}>
+            <Image
+              source={require("../../assets/talking.png")}
+              style={styles.images2}
+            />
+          </Text>
+          {/* <Text style={styles.textnames1}>Talking With</Text> */}
+          {/* <Text style={styles.textnames1}>   Friends</Text> */}
         </TouchableOpacity>
-        <TouchableOpacity >
+        <TouchableOpacity onPress={handlePress4thGame}>
           <Text style={styles.text6}></Text>
         </TouchableOpacity>
         <View style={styles.contentContainer}></View>
@@ -79,7 +94,6 @@ export default function ExploreGamesScreen({ navigation }) {
     </View>
   );
 }
-
 
 const styles = StyleSheet.create({
   container: {
@@ -169,7 +183,6 @@ const styles = StyleSheet.create({
     marginLeft: 190,
     marginTop: -40,
   },
-  
 
   text1: {
     fontSize: 20,
@@ -216,7 +229,7 @@ const styles = StyleSheet.create({
     padding: 10,
     alignItems: "center",
     justifyContent: "center",
-    marginBottom:-30,
+    marginBottom: -30,
     width: "20%",
     flexDirection: "row",
   },
@@ -224,7 +237,6 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 18,
   },
-
 
   image: {
     position: "absolute",
@@ -257,7 +269,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-
 
   image1: {
     position: "absolute",

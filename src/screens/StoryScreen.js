@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -6,17 +6,38 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
+import { useRoute } from '@react-navigation/native'
 
 export default function StoryScreen({ navigation }) {
+  const route = useRoute();
+  const { myPropFunction } = route.params;
+
+  const handlePress1stStory = async () => {
+    myPropFunction();
+    navigation.navigate("AudioBook");
+  }
+
+  const handlePress2ndStory = async () => {
+    myPropFunction();
+  }
+
+  const handlePress3rdStory = async () => {
+    myPropFunction();
+  }
+
+  const handlePress4thStory = async () => {
+    myPropFunction();
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.contentContainer}>
-      <TouchableOpacity>
+        <TouchableOpacity>
           <Image
             source={require("../../assets/home.png")}
             style={styles.image5}
           />
-          
+
         </TouchableOpacity>
         <TouchableOpacity>
           <Image
@@ -44,34 +65,34 @@ export default function StoryScreen({ navigation }) {
             style={styles.image4}
           />
           <TouchableOpacity >
-          <Text style={styles.button}>           Story</Text>
+            <Text style={styles.button}>Story</Text>
+          </TouchableOpacity>
         </TouchableOpacity>
-        </TouchableOpacity>
-        <TouchableOpacity >
+        <TouchableOpacity onPress={handlePress1stStory}>
           <Text style={styles.text3}><Image
             source={require("../../assets/bike.png")}
             style={styles.images}
           /></Text>
-       
+
         </TouchableOpacity>
-   
-        <TouchableOpacity >
+
+        <TouchableOpacity onPress={handlePress2ndStory}>
           <Text style={styles.text4}><Image
             source={require("../../assets/while.png")}
             style={styles.images1}
           />   </Text>
-           
+
         </TouchableOpacity>
-       
-        <TouchableOpacity >
+
+        <TouchableOpacity onPress={handlePress3rdStory}>
           <Text style={styles.text5}><Image
             source={require("../../assets/talking.png")}
             style={styles.images2}
           /></Text>
-           {/* <Text style={styles.textnames1}>Talking With</Text> */}
-           {/* <Text style={styles.textnames1}>   Friends</Text> */}
+          {/* <Text style={styles.textnames1}>Talking With</Text> */}
+          {/* <Text style={styles.textnames1}>   Friends</Text> */}
         </TouchableOpacity>
-        <TouchableOpacity >
+        <TouchableOpacity onPress={handlePress4thStory}>
           <Text style={styles.text6}></Text>
         </TouchableOpacity>
         <View style={styles.contentContainer}></View>
@@ -169,7 +190,7 @@ const styles = StyleSheet.create({
     marginLeft: 190,
     marginTop: -40,
   },
-  
+
 
   text1: {
     fontSize: 20,
@@ -216,7 +237,7 @@ const styles = StyleSheet.create({
     padding: 10,
     alignItems: "center",
     justifyContent: "center",
-    marginBottom:-30,
+    marginBottom: -30,
     width: "20%",
     flexDirection: "row",
   },
